@@ -22,8 +22,11 @@
   - app_user_edit        -    /user/{id}/edit
   - app_user_delete      -    /user/{id}/delete
 
-#### Pour voir une ensembles des information comme "un post et son publishers et ses commentaires" dans une seule pages
-- - app_post_show        -   /post/{id}
+#### Pour voir une ensemble des informations comme "un post et son publisher et ses commentaires" dans une seule pages:
+  - app_post_show        -   /post/{id}
+
+#### Après avoir analysé la base des données, Il y a aucune commenataire qui n'a pas de post 
+
 
 
 
