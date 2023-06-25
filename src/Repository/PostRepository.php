@@ -61,17 +61,6 @@ class PostRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
-    // public function findUserByPost($postId)
-    // {
-    //     $entityManager = $this->getEntityManager();
-    //     $query = $entityManager->createQuery(
-    //         'SELECT p.userId FROM App\Entity\Post p JOIN App\Entity\User u WHERE p.Id=:postId'
-    //     // -- WHERE u.id = :userId'
-    //     )->setParameter('postId', $postId);
-
-    //     return $query->getResult();
-    // }
-
     public function findUserByPost($postId)
     {
         $entityManager = $this->getEntityManager();
@@ -81,6 +70,17 @@ class PostRepository extends ServiceEntityRepository
         JOIN App\Entity\Post p
         WHERE p.userId = u.id AND p.id=:postId'
         )->setParameter('postId', $postId);
+
+        return $query->getResult();
+    }
+
+    // To check if any post hasn't comments
+    public function findPostsWithoutComments(): array
+    {
+        $query = $this->createQueryBuilder('p')
+            ->leftJoin('App\Entity\Comment', 'c', 'WITH', 'c.post = p.id')
+            ->where('c.post IS NULL')
+            ->getQuery();
 
         return $query->getResult();
     }
