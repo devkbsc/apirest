@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <h1>API REST</h1>
+
+    <p>Menu:</p>
+
+<ul>
+    <li><a href='{{ path('home')}}'>Home</a></li>
+    <li><a href='{{ path('app_comment_index')}}'>Comments</a></li>
+    <li><a href='{{ path('app_post_index')}}'>Posts</a></li>
+    <li><a href='{{ path('app_user_index')}}'>Users</a></li>
+</ul>
+{% endblock %}
