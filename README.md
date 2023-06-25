@@ -22,3 +22,8 @@
   - app_user_edit        GET|POST   ANY      ANY    /user/{id}/edit
   - app_user_delete      GET        ANY      ANY    /user/{id}/delete
 
+#### Pour voir une ensembles des information comme "un post et son publishers et ses commentaires" dans une seule pages
+- - app_post_show        GET        ANY      ANY    /post/{id}
+
+
+
